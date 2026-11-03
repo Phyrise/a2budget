@@ -21,7 +21,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'integration-v31');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://localhost:${port}/a2-budget/`;
+const APP = `http://localhost:${port}/a2budget/`;
 const UI_KEY = 'a2-budget:ui:v1';
 
 const failures = [];
@@ -35,7 +35,7 @@ const nbspOk = (text) => !/[^  (\s][:;?!€]/.test(text.replace(/https?:\S+/g
 async function seed(page, module) {
   await page.goto(`${APP}?module=${module}`);
   const r = await page.evaluate(async ({ entry, module, uiKey }) => {
-    const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+    const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
     const now = new Date();
     let s = core.emptyAppState();
     const key = core.currentMonthKey(now);

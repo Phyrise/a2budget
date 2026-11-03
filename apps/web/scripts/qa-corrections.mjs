@@ -19,7 +19,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'corrections');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://localhost:${port}/a2-budget/`;
+const APP = `http://localhost:${port}/a2budget/`;
 
 const results = [];
 const check = (name, ok, detail = '') => {
@@ -30,7 +30,7 @@ const check = (name, ok, detail = '') => {
 async function seed(page) {
   await page.goto(`${APP}?module=maison`);
   const r = await page.evaluate(async ({ entry }) => {
-    const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+    const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
     const now = new Date();
     const day = (n) => {
       const d = core.addDays(now, n);
@@ -74,7 +74,7 @@ async function seed(page) {
   await page.locator('.screen-sheet').waitFor();
   // Instrumente la lanterne de la forêt (même module que l'app en dev).
   await page.evaluate(async () => {
-    const mod = await import('/a2-budget/src/world/engine/Engine.ts');
+    const mod = await import('/a2budget/src/world/engine/Engine.ts');
     window.__focus = [];
     const orig = mod.WorldEngine.prototype.focus;
     mod.WorldEngine.prototype.focus = function (p, who) {

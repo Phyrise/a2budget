@@ -9,8 +9,8 @@ const names = (urls: string[]) => urls.map((u) => (u.split('/').pop() ?? '').rep
 describe('isSeasonFile', () => {
   it('reconnaît les fichiers « season-… », source ou build', () => {
     expect(isSeasonFile('/src/world/assets/seasons/winter/season-winter-stage-1.webp')).toBe(true);
-    expect(isSeasonFile('/a2-budget/assets/season-winter-stage-4-pdAV5--a.webp?v=1')).toBe(true);
-    expect(isSeasonFile('/a2-budget/assets/stage-1-BeGzblgo.webp')).toBe(false);
+    expect(isSeasonFile('/a2budget/assets/season-winter-stage-4-pdAV5--a.webp?v=1')).toBe(true);
+    expect(isSeasonFile('/a2budget/assets/stage-1-BeGzblgo.webp')).toBe(false);
     expect(isSeasonFile('/src/world/assets/seasons/winter/depth.webp')).toBe(false);
   });
 });

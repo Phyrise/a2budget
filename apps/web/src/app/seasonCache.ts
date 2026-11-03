@@ -68,7 +68,7 @@ export function isSeasonAsset(pathname: string): boolean {
 
 /**
  * Nom logique (sans hash) et saison d'une image de saison, ex.
- * `/a2-budget/assets/season-winter-stage-3-AbC_12-x.webp` →
+ * `/a2budget/assets/season-winter-stage-3-AbC_12-x.webp` →
  * `{ key: 'season-winter-stage-3', season: 'winter' }`. null sinon.
  */
 export function parseSeasonAsset(pathname: string): { key: string; season: SeasonName } | null {

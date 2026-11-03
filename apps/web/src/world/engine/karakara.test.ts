@@ -12,8 +12,8 @@ const kodama = (x: number, y: number, depth = 0.2, vis = 1): TouchTarget => ({ x
 
 describe('gréement des têtes', () => {
   it('reconnaît chaque peinture (URL de dev ou de build), repli sinon', () => {
-    expect(rigFor('/a2-budget/src/world/assets/sprites/kodama-7.webp').radius[0]).toBeGreaterThan(0.3);
-    expect(rigFor('/a2-budget/assets/kodama-1-Ab12Cd.webp')).not.toBe(DEFAULT_RIG);
+    expect(rigFor('/a2budget/src/world/assets/sprites/kodama-7.webp').radius[0]).toBeGreaterThan(0.3);
+    expect(rigFor('/a2budget/assets/kodama-1-Ab12Cd.webp')).not.toBe(DEFAULT_RIG);
     expect(rigFor('/lab/kodama-sheet.png')).toBe(DEFAULT_RIG);
   });
 

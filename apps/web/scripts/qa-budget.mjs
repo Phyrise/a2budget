@@ -19,7 +19,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'budget');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://localhost:${port}/a2-budget/`;
+const APP = `http://localhost:${port}/a2budget/`;
 
 const failures = [];
 const check = (name, ok, detail = '') => {
@@ -33,7 +33,7 @@ async function seed(page, { a, b, bonusB = 0, expenses = null }) {
   await page.goto(`${APP}?module=budget`);
   const r = await page.evaluate(
     async ({ entry, a, b, bonusB, expenses }) => {
-      const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+      const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
       const now = new Date();
       const s = core.emptyAppState();
       const key = core.currentMonthKey(now);

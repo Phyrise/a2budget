@@ -6,7 +6,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 
 export const STORAGE_KEY = 'a2-budget:state:v1';
 export const UI_KEY = 'a2-budget:ui:v1';
-export const APP = '/a2-budget/';
+export const APP = '/a2budget/';
 
 /** Mobile d'abord : iPhone 390 × 844 (la config par défaut est un écran de bureau). */
 export const PHONE = { width: 390, height: 844 } as const;

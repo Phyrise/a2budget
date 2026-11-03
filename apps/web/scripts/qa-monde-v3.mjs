@@ -15,7 +15,7 @@ import { chromium } from '@playwright/test';
 const here = dirname(fileURLToPath(import.meta.url));
 const out = resolve(here, '../qa/monde-v3');
 mkdirSync(out, { recursive: true });
-const BASE = process.env.LAB_URL ?? 'http://localhost:5193/a2-budget/world-lab.html';
+const BASE = process.env.LAB_URL ?? 'http://localhost:5193/a2budget/world-lab.html';
 const filter = process.argv[2] ?? '';
 const VIEW = { width: 390, height: 844 };
 /** Les noms en « d- » sont capturés en présentation bureau (backdrop 1440×900). */

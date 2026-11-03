@@ -4,7 +4,7 @@
  * Vite. Crédits de la forêt cohérents : uniquement toggleTaskToday.
  */
 export async function seedState({ entry }) {
-  const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+  const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
   const now = new Date();
   const at = (d, h, m = 0) => new Date(d.getFullYear(), d.getMonth(), d.getDate(), h, m);
   let s = core.emptyAppState();

@@ -24,7 +24,7 @@ les gestes de l'autre (sauf mode développeur).
 ## 1. Architecture
 
 ```
-Téléphone AL (PWA, phyrise.github.io/a2-budget/)    Téléphone AC (idem)
+Téléphone AL (PWA, phyrise.github.io/a2budget/)    Téléphone AC (idem)
   React + store (AppState, inchangé pour l'UI)        …
   └─ SyncBridge (nouveau, apps/web/src/sync/)
        ├─ Firebase Auth : connexion Google
@@ -39,7 +39,7 @@ Téléphone AL (PWA, phyrise.github.io/a2-budget/)    Téléphone AC (idem)
    (option) Cloudflare Worker gratuit « a2-push » : Web Push VAPID (§8)
 ```
 
-- **Hébergement** : GitHub Pages, inchangé (`base: '/a2-budget/'`). Aucun Firebase Hosting,
+- **Hébergement** : GitHub Pages, inchangé (`base: '/a2budget/'`). Aucun Firebase Hosting,
   aucune Cloud Function (elles exigent l'offre Blaze, donc une carte). Aucun Cloud Storage
   (même raison depuis fin 2024).
 - **Configuration web publique** (`apiKey`, `authDomain`, `projectId`, `appId`…) : ce ne

@@ -25,7 +25,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'corrections-v31');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://localhost:${port}/a2-budget/`;
+const APP = `http://localhost:${port}/a2budget/`;
 const KEY = 'a2-budget:state:v1';
 const failures = [];
 const errors = [];
@@ -149,7 +149,7 @@ const harness = `${APP}qa/corrections-v31/harness.html`;
   track(page);
   await page.goto(`${APP}?module=courses`);
   const r = await page.evaluate(async (entry) => {
-    const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+    const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
     const s = core.emptyAppState();
     const key = core.currentMonthKey(new Date());
     s.budget.months = [core.createMonthRecord(key, s.budget.settings)];
@@ -197,7 +197,7 @@ const harness = `${APP}qa/corrections-v31/harness.html`;
   track(page);
   await page.goto(`${APP}?module=budget`);
   await page.evaluate(async (entry) => {
-    const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+    const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
     const s = core.emptyAppState();
     const key = core.currentMonthKey(new Date());
     s.budget.settings.personB = { ...s.budget.settings.personB, baseRateBps: 3000, variableRateBps: 1500 };

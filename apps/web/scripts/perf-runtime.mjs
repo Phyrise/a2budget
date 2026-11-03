@@ -38,7 +38,7 @@ function options(args) {
 }
 
 async function serve(o) {
-  const url = `http://127.0.0.1:${o.port}/a2-budget/`;
+  const url = `http://127.0.0.1:${o.port}/a2budget/`;
   const up = () => fetch(url).then((r) => r.ok, () => false);
   if (await up()) return { url, stop() {} };
   const child = spawn('npx', ['vite', 'preview', '--outDir', o.dist, '--port', String(o.port), '--strictPort'], { cwd: webRoot, stdio: 'ignore' });

@@ -19,7 +19,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'budget');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://127.0.0.1:${port}/a2-budget/`;
+const APP = `http://127.0.0.1:${port}/a2budget/`;
 
 const failures = [];
 const check = (name, ok, detail) => {

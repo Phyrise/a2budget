@@ -7,7 +7,7 @@ estimé, voir « Solde du compte commun »).
 
 - Interface en **français** ; code et identifiants en **anglais**.
 - V1 100 % locale : PWA React/TypeScript/Vite servie sur GitHub Pages
-  (`https://phyrise.github.io/a2-budget/`), persistance `localStorage`.
+  (`https://phyrise.github.io/a2budget/`), persistance `localStorage`.
 - Pas de backend, pas de compte, pas d'authentification, pas de synchronisation,
   pas de connexion bancaire, pas d'analytics, aucun service externe.
 - Aucune donnée financière n'est envoyée sur le réseau, placée dans une URL,
@@ -206,8 +206,8 @@ Navigation par état React, sans routeur. Navigation inférieure fixe :
 
 ## PWA et GitHub Pages
 
-- `base: '/a2-budget/'` dans Vite. Manifest : name « A² Budget », short_name
-  « Budget », start_url et scope `/a2-budget/`, display `standalone`, couleurs
+- `base: '/a2budget/'` dans Vite. Manifest : name « A² Budget », short_name
+  « Budget », start_url et scope `/a2budget/`, display `standalone`, couleurs
   cohérentes. Toutes les ressources et l'enregistrement du service worker
   respectent ce sous-chemin.
 - `vite-plugin-pwa` (mode `injectManifest`, SW custom `src/sw.ts`) : précache
@@ -216,7 +216,7 @@ Navigation par état React, sans routeur. Navigation inférieure fixe :
   inclut `jpg`/`png` (forêt, avatars) pour le mode hors ligne ; le bloc
   `workbox.globPatterns` seul ne configure pas le manifest en mode
   `injectManifest`.
-- Service worker limité à `/a2-budget/` ; caches préfixés `a2-budget` ; ne
+- Service worker limité à `/a2budget/` ; caches préfixés `a2-budget` ; ne
   jamais effacer les caches des autres projets. Une mise à jour de l'application
   ne doit pas toucher au stockage financier.
 - **Mise à jour volontaire** : le nouveau worker reste en attente (pas de

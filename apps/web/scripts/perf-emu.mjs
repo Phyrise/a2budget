@@ -118,7 +118,7 @@ async function main() {
   if (!up) throw new Error('Émulateurs injoignables (8180/9180) : lance-les sous verrou d’abord');
   await fetch(`${FS}/emulator/v1/projects/${PROJECT}/databases/(default)/documents`, { method: 'DELETE' });
   await fetch(`${AUTH}/emulator/v1/projects/${PROJECT}/accounts`, { method: 'DELETE' });
-  const url = `http://127.0.0.1:${o.port}/a2-budget/`;
+  const url = `http://127.0.0.1:${o.port}/a2budget/`;
   const preview = spawn('npx', ['vite', 'preview', '--outDir', 'dist-emu', '--port', String(o.port), '--strictPort'], { cwd: webRoot, stdio: 'ignore', detached: true });
   for (let i = 0; i < 60 && !(await fetch(url).then((r) => r.ok, () => false)); i += 1) await sleep(500);
 

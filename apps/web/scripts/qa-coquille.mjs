@@ -16,7 +16,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { chromium } from '@playwright/test';
 
 const port = Number(process.argv[2] ?? 5184);
-const base = `http://127.0.0.1:${port}/a2-budget/`;
+const base = `http://127.0.0.1:${port}/a2budget/`;
 const outDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'qa', 'coquille');
 mkdirSync(outDir, { recursive: true });
 

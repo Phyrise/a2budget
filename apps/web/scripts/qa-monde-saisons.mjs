@@ -18,7 +18,7 @@ import { chromium } from '@playwright/test';
 const here = dirname(fileURLToPath(import.meta.url));
 const out = resolve(here, '../qa/monde-saisons');
 mkdirSync(out, { recursive: true });
-const BASE = process.env.LAB_URL ?? 'http://localhost:5183/a2-budget/world-lab.html';
+const BASE = process.env.LAB_URL ?? 'http://localhost:5183/a2budget/world-lab.html';
 const filter = process.argv[2] ?? '';
 const VIEW = { width: 390, height: 844 };
 const CLIP = { x: 0, y: 0, width: 390, height: 470 };

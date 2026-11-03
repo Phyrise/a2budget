@@ -18,14 +18,14 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'rituels');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://localhost:${port}/a2-budget/`;
+const APP = `http://localhost:${port}/a2budget/`;
 
 /** Construit dans la page un état V2 valide (14 jours de vie commune). */
 async function seed(page, { circles = false, lanterns = false } = {}) {
   await page.goto(`${APP}?module=maison`);
   const result = await page.evaluate(
     async ({ entry, circles, lanterns, motion }) => {
-      const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+      const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
       const now = new Date();
       const day = (n) => {
         const d = core.addDays(now, n);

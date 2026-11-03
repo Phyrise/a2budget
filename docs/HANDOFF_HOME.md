@@ -1,6 +1,6 @@
 # Handoff — Domaine Maison/Forêt (A² Home)
 
-**Branche** : `agent/home` (worktree `../a2-budget-home`, basée sur `main` `9a37d63`).
+**Branche** : `agent/home` (worktree `../a2budget-home`, basée sur `main` `9a37d63`).
 **Statut** : domaine livré + testé + documenté ; module Maison autonome livré +
 QA visuelle faite. **Aucune mutation de `main`, du store, de la coquille ni du
 stockage de production** dans ce lot.

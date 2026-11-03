@@ -23,7 +23,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'corrections-v32');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://localhost:${port}/a2-budget/`;
+const APP = `http://localhost:${port}/a2budget/`;
 
 const failures = [];
 const check = (name, ok, detail = '') => {
@@ -42,7 +42,7 @@ async function seed(page, module) {
 
 async function recordCues(page) {
   await page.evaluate(async () => {
-    const m = await import(/* @vite-ignore */ '/a2-budget/src/app/sound/engine.ts');
+    const m = await import(/* @vite-ignore */ '/a2budget/src/app/sound/engine.ts');
     window.__cues = [];
     window.__off?.();
     window.__off = m.soundEngine.subscribe((rec) => window.__cues.push(rec.cue));

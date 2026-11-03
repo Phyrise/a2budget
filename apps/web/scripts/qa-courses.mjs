@@ -20,11 +20,11 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'courses');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://127.0.0.1:${port}/a2-budget/`;
+const APP = `http://127.0.0.1:${port}/a2budget/`;
 
 /** Construit l'état dans la page (fonction autonome). */
 async function seed({ entry, withItems }) {
-  const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+  const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
   const now = new Date();
   const ago = (days, h = 18) => new Date(now.getFullYear(), now.getMonth(), now.getDate() - days, h, 10);
   let s = core.emptyAppState();

@@ -8,7 +8,7 @@
  * - Tous les caches sont préfixés « a2-budget » : ils ne collident jamais
  *   avec les autres projets servis depuis la même origine (phyrise.github.io)
  *   et le nettoyage des caches périmés ne touche que les nôtres.
- * - Le service worker est limité au scope /a2-budget/ (manifest + scope).
+ * - Le service worker est limité au scope /a2budget/ (manifest + scope).
  * - Une mise à jour de l'application ne touche jamais au stockage financier
  *   (localStorage, clé a2-budget:state:v1).
  */
@@ -33,7 +33,7 @@ precacheAndRoute(self.__WB_MANIFEST);
 
 // Repli SPA : toute navigation est servie par l'index précache
 // (l'application n'a pas de routeur ; l'état de vue est en mémoire).
-const fallback = createHandlerBoundToURL('/a2-budget/index.html');
+const fallback = createHandlerBoundToURL('/a2budget/index.html');
 self.addEventListener('fetch', (event) => {
   if (event.request.mode === 'navigate') {
     event.respondWith(

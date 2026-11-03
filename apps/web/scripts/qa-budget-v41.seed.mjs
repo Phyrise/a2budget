@@ -4,7 +4,7 @@
  * avec compléments, deux cases cochées, une dépense à 0 €.
  */
 export async function seedBudgetV41({ entry }) {
-  const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+  const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
   const now = new Date();
   const key = core.currentMonthKey(now);
   const [y, m] = key.split('-').map(Number);

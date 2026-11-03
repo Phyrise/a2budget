@@ -52,7 +52,7 @@ function diffPaths(a, b, path = '$') {
   const keys = new Set([...Object.keys(a), ...Object.keys(b)]);
   return [...keys].flatMap((k) => diffPaths(a[k], b[k], `${path}.${k}`));
 }
-const url = `http://localhost:${port}/a2-budget/qa/domaine/harness.html`;
+const url = `http://localhost:${port}/a2budget/qa/domaine/harness.html`;
 const failures = [];
 const check = (name, ok, detail) => {
   console.log(`${ok ? 'OK  ' : 'FAIL'} ${name}${ok ? '' : ` — ${JSON.stringify(detail)}`}`);

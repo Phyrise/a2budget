@@ -6,27 +6,27 @@ import { VitePWA } from 'vite-plugin-pwa';
 const coreEntry = fileURLToPath(new URL('../../packages/core/src/index.ts', import.meta.url));
 
 export default defineConfig({
-  // Page projet GitHub Pages : https://phyrise.github.io/a2-budget/
-  base: '/a2-budget/',
+  // Page projet GitHub Pages : https://phyrise.github.io/a2budget/
+  base: '/a2budget/',
   plugins: [
     react(),
     VitePWA({
       registerType: 'prompt',
       // Service worker custom (src/sw.ts) : préfixe des caches « a2-budget »
-      // et repli SPA dans le sous-chemin /a2-budget/.
+      // et repli SPA dans le sous-chemin /a2budget/.
       strategies: 'injectManifest',
       srcDir: 'src',
       filename: 'sw.ts',
       includeAssets: ['favicon.svg', 'icons/*.png'],
       manifest: {
-        id: '/a2-budget/',
+        id: '/a2budget/',
         name: 'A² Home',
         short_name: 'Home',
         description: 'Notre quotidien à deux : budget, maison et courses.',
         lang: 'fr',
         dir: 'ltr',
-        start_url: '/a2-budget/',
-        scope: '/a2-budget/',
+        start_url: '/a2budget/',
+        scope: '/a2budget/',
         display: 'standalone',
         background_color: '#0b1410',
         theme_color: '#0b1410',
@@ -84,7 +84,7 @@ export default defineConfig({
     },
   },
   server: {
-    // Test LAN depuis un téléphone : http://<ip>:5173/a2-budget/
+    // Test LAN depuis un téléphone : http://<ip>:5173/a2budget/
     host: true,
     port: 5173,
   },

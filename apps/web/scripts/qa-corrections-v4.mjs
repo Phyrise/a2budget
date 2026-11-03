@@ -23,7 +23,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const outDir = join(webRoot, 'qa', 'corrections-v4');
 mkdirSync(outDir, { recursive: true });
 
-const BASE = `http://127.0.0.1:${port}/a2-budget/`;
+const BASE = `http://127.0.0.1:${port}/a2budget/`;
 const KEY = 'a2-budget:state:v1';
 const UI_KEY = 'a2-budget:ui:v1';
 

@@ -452,7 +452,7 @@ demandent les nouvelles dépendances au lead.
 
 ```
 pnpm install --frozen-lockfile   # installation propre
-pnpm dev                         # serveur dev (host 0.0.0.0, port 5173, base /a2-budget/)
+pnpm dev                         # serveur dev (host 0.0.0.0, port 5173, base /a2budget/)
 pnpm typecheck                   # tsc --noEmit sur core et web
 pnpm test                        # vitest (packages/core)
 pnpm build                       # tsc + vite build (apps/web)

@@ -22,7 +22,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'integration-v3');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://127.0.0.1:${port}/a2-budget/`;
+const APP = `http://127.0.0.1:${port}/a2budget/`;
 const only = process.env.ONLY ?? '';
 
 const args =

@@ -69,18 +69,18 @@ describe('isSeasonAsset / parseSeasonAsset', () => {
   ];
 
   it.each(real)('%s', (file, key, season) => {
-    const path = `/a2-budget/assets/${file}`;
+    const path = `/a2budget/assets/${file}`;
     expect(isSeasonAsset(path)).toBe(true);
     expect(parseSeasonAsset(path)).toEqual({ key, season });
   });
 
   it('refuse la base, les portraits, les chemins sources et les autres dossiers', () => {
     for (const p of [
-      '/a2-budget/assets/stage-1-BeGzblgo.webp',
-      '/a2-budget/assets/banner-portrait-AbCdEf12.webp',
-      '/a2-budget/src/world/assets/seasons/winter/season-winter-stage-1.webp',
-      '/a2-budget/other/season-winter-stage-1-BeGzblgo.webp',
-      '/a2-budget/assets/season-winter-stage-1-BeGzblgo.js',
+      '/a2budget/assets/stage-1-BeGzblgo.webp',
+      '/a2budget/assets/banner-portrait-AbCdEf12.webp',
+      '/a2budget/src/world/assets/seasons/winter/season-winter-stage-1.webp',
+      '/a2budget/other/season-winter-stage-1-BeGzblgo.webp',
+      '/a2budget/assets/season-winter-stage-1-BeGzblgo.js',
     ]) {
       expect(isSeasonAsset(p)).toBe(false);
       expect(parseSeasonAsset(p)).toBeNull();
@@ -118,10 +118,10 @@ function fakeStorage(entries: { url: string; at?: number }[]) {
     has: async (name: string) => name === SEASONS_CACHE,
     open: async () => cache,
   } as unknown as CacheStorage;
-  return { storage, urls: () => [...store.keys()].map((u) => u.replace('https://x.test/a2-budget/assets/', '')) };
+  return { storage, urls: () => [...store.keys()].map((u) => u.replace('https://x.test/a2budget/assets/', '')) };
 }
 
-const U = (f: string) => `https://x.test/a2-budget/assets/${f}`;
+const U = (f: string) => `https://x.test/a2budget/assets/${f}`;
 
 describe('purgeSeasonCache', () => {
   const now = day(2027, 1, 15);

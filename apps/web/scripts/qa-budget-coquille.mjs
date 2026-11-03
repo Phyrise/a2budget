@@ -18,7 +18,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'budget-coquille');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://localhost:${port}/a2-budget/`;
+const APP = `http://localhost:${port}/a2budget/`;
 const KEY = 'a2-budget:state:v1';
 
 const failures = [];
@@ -32,7 +32,7 @@ const stored = (page) => page.evaluate((k) => JSON.parse(localStorage.getItem(k)
 async function seed(page, module = 'budget') {
   await page.goto(`${APP}?module=${module}`);
   const r = await page.evaluate(async ({ entry, module }) => {
-    const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+    const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
     const now = new Date();
     let s = core.emptyAppState();
     const key = core.currentMonthKey(now);

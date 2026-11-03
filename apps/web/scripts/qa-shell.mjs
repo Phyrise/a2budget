@@ -25,7 +25,7 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'shell');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://localhost:${port}/a2-budget/`;
+const APP = `http://localhost:${port}/a2budget/`;
 const STATE_KEY = 'a2-budget:state:v1';
 
 const failures = [];
@@ -61,7 +61,7 @@ async function seed(page, module, devMode = false) {
 /** Enregistre les sons demandés au moteur (même instance de module que l'app). */
 async function recordCues(page) {
   await page.evaluate(async () => {
-    const m = await import(/* @vite-ignore */ '/a2-budget/src/app/sound/engine.ts');
+    const m = await import(/* @vite-ignore */ '/a2budget/src/app/sound/engine.ts');
     window.__cues = [];
     m.soundEngine.subscribe((rec) => window.__cues.push(rec.cue));
   });
@@ -235,8 +235,8 @@ for (const cue of ['coins', 'konpeito', 'broom', 'shopBell', 'woodNote']) {
   for (const gentle of [false, true]) {
     const m = await page.evaluate(
       async ([c, g]) => {
-        const { buildBus } = await import(/* @vite-ignore */ '/a2-budget/src/app/sound/engine.ts');
-        const { renderCue } = await import(/* @vite-ignore */ '/a2-budget/src/app/sound/voices.ts');
+        const { buildBus } = await import(/* @vite-ignore */ '/a2budget/src/app/sound/engine.ts');
+        const { renderCue } = await import(/* @vite-ignore */ '/a2budget/src/app/sound/voices.ts');
         const rate = 44100;
         const ctx = new OfflineAudioContext(2, rate * 3, rate);
         renderCue(buildBus(ctx, ctx.destination), c, 0.01, { who: 'none', gentle: g });

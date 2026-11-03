@@ -57,7 +57,7 @@ const take = () => page.evaluate(() => window.__records.splice(0).map((r) => r.c
 const act = async (fn, arg, ms) => { await page.evaluate(fn, arg); await settle(ms); return take(); };
 
 // --- 1. Sons V4 --------------------------------------------------------------
-await page.goto(`${origin}/a2-budget/qa/coquille-v4/harness.html`);
+await page.goto(`${origin}/a2budget/qa/coquille-v4/harness.html`);
 await page.waitForFunction(() => window.__app?.appState != null);
 await page.evaluate(() => { localStorage.clear(); });
 await page.reload();
@@ -136,7 +136,7 @@ for (const cue of ['nom', 'balanceBell', 'lanternLit', 'lanternNew']) {
 check('harnais sons : aucune erreur', errors.length === 0, errors);
 
 // --- 2. Courses : cocher sans « zoom » ----------------------------------------
-await page.goto(`${origin}/a2-budget/?module=courses`);
+await page.goto(`${origin}/a2budget/?module=courses`);
 const banner = page.locator('.app-world__banner[data-universe="courses"]');
 await banner.waitFor();
 await page.waitForFunction(() => document.querySelector('.app-world__banner[data-universe="courses"]')?.classList.contains('is-shown'));
@@ -174,7 +174,7 @@ await planche.screenshot({ path: join(outDir, 'planche-courses.jpg'), type: 'jpe
 await planche.close();
 
 // --- 3. Calendrier : univers Totoro ------------------------------------------
-await page.goto(`${origin}/a2-budget/?module=calendar`);
+await page.goto(`${origin}/a2budget/?module=calendar`);
 const cal = page.locator('.app-world__banner[data-universe="calendar"]');
 await cal.waitFor();
 await page.waitForFunction(() => {
@@ -193,7 +193,7 @@ await page.screenshot({ path: join(outDir, 'calendrier-telephone.jpg'), type: 'j
 
 const desk = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 desk.on('pageerror', (e) => errors.push(String(e)));
-await desk.goto(`${origin}/a2-budget/?module=calendar`);
+await desk.goto(`${origin}/a2budget/?module=calendar`);
 await desk.waitForFunction(() => {
   const img = document.querySelector('.app-world__backdrop[data-universe="calendar"]');
   return img?.classList.contains('is-shown') && img.complete && img.naturalWidth > 0;

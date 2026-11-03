@@ -10,7 +10,7 @@
  * Passé tel quel à `page.evaluate` (fonction autonome, sans fermeture).
  */
 export async function seedIntegrationState({ entry }) {
-  const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+  const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
   const now = new Date();
   const day = (d) => core.localDateKey(core.addDays(now, d));
   const wd = (d) => core.isoWeekday(core.addDays(now, d));

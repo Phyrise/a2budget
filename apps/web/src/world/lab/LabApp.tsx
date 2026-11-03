@@ -1,5 +1,5 @@
 /**
- * Labo du monde (dev seulement, servi par le serveur de dev : /a2-budget/world-lab.html).
+ * Labo du monde (dev seulement, servi par le serveur de dev : /a2budget/world-lab.html).
  * Contrôles : stade, humeur, pause, lumières ±, pulse (fort), gardien,
  * saison (vraies peintures de saison du manifest, fondu au changement ; soir d'été), lanterne (progression, floraison,
  * modèle de pierre `model=…`, kodama assis sur le toit), mouvement,

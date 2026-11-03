@@ -28,7 +28,7 @@ const coreDir = dirname(require.resolve('playwright-core/package.json', { paths:
 const { PNG } = require(join(coreDir, 'lib/utilsBundle'));
 
 const port = Number(process.argv[2] ?? 5185);
-const base = `http://127.0.0.1:${port}/a2-budget/`;
+const base = `http://127.0.0.1:${port}/a2budget/`;
 const outDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'qa', 'integration-saisons');
 mkdirSync(outDir, { recursive: true });
 

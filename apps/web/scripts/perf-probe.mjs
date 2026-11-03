@@ -81,8 +81,8 @@ export function bundle(dist = join(webRoot, 'dist')) {
   const files = walk(dist).map((abs) => ({ abs, rel: relative(dist, abs).split('\\').join('/'), size: statSync(abs).size }));
   const precached = precacheList(dist);
   const html = readFileSync(join(dist, 'index.html'), 'utf8');
-  const entryJs = [...html.matchAll(/src="\/a2-budget\/(assets\/[^"]+\.js)"/g)].map((m) => m[1]);
-  const entryCss = [...html.matchAll(/href="\/a2-budget\/(assets\/[^"]+\.css)"/g)].map((m) => m[1]);
+  const entryJs = [...html.matchAll(/src="\/a2budget\/(assets\/[^"]+\.js)"/g)].map((m) => m[1]);
+  const entryCss = [...html.matchAll(/href="\/a2budget\/(assets\/[^"]+\.css)"/g)].map((m) => m[1]);
   const role = (rel) => {
     if (entryJs.includes(rel) || entryCss.includes(rel)) return 'démarrage (toujours)';
     if (/session-/.test(rel)) return 'Firebase (connecté seulement)';

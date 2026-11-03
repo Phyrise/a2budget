@@ -96,7 +96,7 @@ for (const [theme, t] of [['budget', budgetTheme], ['courses', coursesTheme]] as
 
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1300, height: 900 } });
-await page.goto(`http://localhost:${port}/a2-budget/qa/saisons-assets/check.html`);
+await page.goto(`http://localhost:${port}/a2budget/qa/saisons-assets/check.html`);
 await page.waitForFunction(() => '__qa' in window, null, { timeout: 60000 });
 const qa = await page.evaluate(() => window.__qa);
 writeFileSync(join(outDir, 'report.json'), JSON.stringify(qa, null, 1));

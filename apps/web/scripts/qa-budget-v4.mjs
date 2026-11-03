@@ -19,10 +19,10 @@ const webRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const coreEntry = resolve(webRoot, '../../packages/core/src/index.ts');
 const outDir = join(webRoot, 'qa', 'budget-v4');
 mkdirSync(outDir, { recursive: true });
-const APP = `http://127.0.0.1:${port}/a2-budget/`;
+const APP = `http://127.0.0.1:${port}/a2budget/`;
 
 async function seedState({ entry }) {
-  const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+  const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
   const now = new Date();
   const key = core.currentMonthKey(now);
   const [y, m] = key.split('-').map(Number);

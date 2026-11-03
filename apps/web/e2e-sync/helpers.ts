@@ -5,7 +5,7 @@
  */
 import { expect, type BrowserContext, type Page } from '@playwright/test';
 
-export const APP = '/a2-budget/';
+export const APP = '/a2budget/';
 export const STATE_KEY = 'a2-budget:state:v1';
 export const ACCOUNT_KEY = 'a2-budget:account:v1';
 const PROJECT = 'demo-a2home';

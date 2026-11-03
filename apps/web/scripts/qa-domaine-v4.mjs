@@ -44,7 +44,7 @@ createRoot(document.getElementById('root')!).render(
 );
 
 const KEY = 'a2-budget:state:v1';
-const url = `http://localhost:${port}/a2-budget/qa/domaine-v4/harness.html`;
+const url = `http://localhost:${port}/a2budget/qa/domaine-v4/harness.html`;
 const failures = [];
 const check = (name, ok, detail) => {
   console.log(`${ok ? 'OK  ' : 'FAIL'} ${name}${ok ? '' : ` — ${JSON.stringify(detail)}`}`);

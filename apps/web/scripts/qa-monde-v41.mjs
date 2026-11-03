@@ -24,7 +24,7 @@ const filter = process.argv[3] ?? '';
 const out = join(webRoot, 'qa', 'monde-v41', which);
 mkdirSync(out, { recursive: true });
 const ORIGIN = process.env.QA_ORIGIN ?? 'http://127.0.0.1:5183';
-const LAB = `${ORIGIN}/a2-budget/world-lab.html?ui=0&lights=0&motion=full`;
+const LAB = `${ORIGIN}/a2budget/world-lab.html?ui=0&lights=0&motion=full`;
 const VIEW = { width: 390, height: 844 };
 const failures = [];
 const check = (ok, label) => {

@@ -24,7 +24,7 @@ const webRoot = resolve(here, '..');
 const out = join(webRoot, 'qa', 'monde-v4');
 mkdirSync(out, { recursive: true });
 const ORIGIN = process.env.QA_ORIGIN ?? 'http://127.0.0.1:5183';
-const BASE = `${ORIGIN}/a2-budget/`;
+const BASE = `${ORIGIN}/a2budget/`;
 const LAB = `${BASE}world-lab.html?ui=0&lights=0&season=summer`;
 const filter = process.argv[2] ?? '';
 const VIEW = { width: 390, height: 844 };

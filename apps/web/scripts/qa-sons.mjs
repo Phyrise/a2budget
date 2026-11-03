@@ -94,7 +94,7 @@ createRoot(document.getElementById('root')!).render(<StrictMode><AppProvider><Sh
 );
 
 const KEY = 'a2-budget:state:v1';
-const url = `http://localhost:${port}/a2-budget/qa/sons/harness.html`;
+const url = `http://localhost:${port}/a2budget/qa/sons/harness.html`;
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 420, height: 520 } });
 const errors = [];

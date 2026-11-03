@@ -28,7 +28,7 @@ export default defineConfig({
   retries: 0,
   reporter: [['list']],
   use: {
-    baseURL: `http://127.0.0.1:${PORT}/a2-budget/`,
+    baseURL: `http://127.0.0.1:${PORT}/a2budget/`,
     viewport: { width: 390, height: 844 },
     trace: 'retain-on-failure',
   },
@@ -40,7 +40,7 @@ export default defineConfig({
   ],
   webServer: {
     command: `pnpm exec vite preview --outDir dist-e2e --port ${PORT} --strictPort`,
-    url: `http://127.0.0.1:${PORT}/a2-budget/`,
+    url: `http://127.0.0.1:${PORT}/a2budget/`,
     reuseExistingServer: true,
     timeout: 60_000,
   },

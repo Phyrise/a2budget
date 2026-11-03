@@ -14,7 +14,7 @@ import { chromium } from '@playwright/test';
 const here = dirname(fileURLToPath(import.meta.url));
 const out = resolve(here, '../qa/monde');
 mkdirSync(out, { recursive: true });
-const BASE = process.env.LAB_URL ?? 'http://localhost:5183/a2-budget/world-lab.html';
+const BASE = process.env.LAB_URL ?? 'http://localhost:5183/a2budget/world-lab.html';
 const only = process.argv[2] ?? '';
 const GPU = ['--use-angle=metal', '--enable-gpu', '--ignore-gpu-blocklist'];
 const mobile = { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2 };

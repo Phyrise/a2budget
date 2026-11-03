@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest';
 import { QA_MARKER, checkBuild, chunkImports, entryScripts } from './check-firebase-split.mjs';
 
-const HTML = '<!doctype html><script type="module" crossorigin src="/a2-budget/assets/index-A.js"></script>';
+const HTML = '<!doctype html><script type="module" crossorigin src="/a2budget/assets/index-A.js"></script>';
 const SDK = 'fetch("https://identitytoolkit.googleapis.com/v1")';
 
 describe('check-firebase-split', () => {

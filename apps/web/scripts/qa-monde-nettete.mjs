@@ -20,7 +20,7 @@ const season = process.argv[3] ?? 'summer';
 const out = join(resolve(here, '..'), 'qa', 'monde-nettete', which);
 mkdirSync(out, { recursive: true });
 const ORIGIN = process.env.QA_ORIGIN ?? 'http://127.0.0.1:5185';
-const LAB = `${ORIGIN}/a2-budget/world-lab.html?ui=0&lights=0&motion=full&stage=6&season=${season}`;
+const LAB = `${ORIGIN}/a2budget/world-lab.html?ui=0&lights=0&motion=full&stage=6&season=${season}`;
 
 const browser = await chromium.launch({ args: ['--use-angle=metal', '--enable-gpu'] });
 const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 3, locale: 'fr-FR' });

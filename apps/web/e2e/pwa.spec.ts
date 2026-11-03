@@ -15,7 +15,7 @@ import path from 'node:path';
  */
 
 // Dossier des builds : A2_PWA_DIR si défini (même variable que pwa-builds.sh).
-const PWA_DIR = process.env.A2_PWA_DIR ?? '/tmp/a2-budget/pwa';
+const PWA_DIR = process.env.A2_PWA_DIR ?? '/tmp/a2budget/pwa';
 const V1 = path.join(PWA_DIR, 'dist-v1');
 const V2 = path.join(PWA_DIR, 'dist-v2');
 const pwaReady = existsSync(V1) && existsSync(V2);
@@ -23,7 +23,7 @@ const pwaSkipReason =
   'builds PWA absents : lancer apps/web/scripts/pwa-builds.sh avant la suite';
 // Port du serveur statique : A2_PWA_PORT si défini (plusieurs suites en parallèle).
 const PORT = Number(process.env.A2_PWA_PORT ?? 4210);
-const BASE = `http://127.0.0.1:${PORT}/a2-budget/`;
+const BASE = `http://127.0.0.1:${PORT}/a2budget/`;
 
 const MIME: Record<string, string> = {
   '.html': 'text/html',
@@ -45,8 +45,8 @@ function createServer(root: string): http.Server {
   return http.createServer(async (req, res) => {
     const url = new URL(req.url ?? '/', `http://127.0.0.1:${PORT}`);
     let p = decodeURIComponent(url.pathname);
-    if (p.startsWith('/a2-budget/')) {
-      p = p.slice('/a2-budget/'.length);
+    if (p.startsWith('/a2budget/')) {
+      p = p.slice('/a2budget/'.length);
     }
     if (p === '' || p.endsWith('/')) {
       p += 'index.html';

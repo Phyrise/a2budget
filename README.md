@@ -7,7 +7,7 @@ V1 : PWA 100 % locale (React + TypeScript + Vite), servie sur GitHub Pages,
 persistance `localStorage`. Pas de compte, pas de backend, pas de
 synchronisation, aucune donnée financière envoyée sur le réseau.
 
-- URL cible : <https://phyrise.github.io/a2-budget/>
+- URL cible : <https://phyrise.github.io/a2budget/>
 - Docs : [SPEC](docs/SPEC.md) · [CONTRACTS](docs/CONTRACTS.md) ·
   [DESIGN](docs/DESIGN.md) · [FUTURE_SYNC](docs/FUTURE_SYNC.md)
 
@@ -18,11 +18,11 @@ Prérequis : Node.js ≥ 22.12 (LTS) et pnpm (la version est fixée dans
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm dev            # http://localhost:5173/a2-budget/
+pnpm dev            # http://localhost:5173/a2budget/
 ```
 
 Le serveur dev écoute sur `0.0.0.0` : depuis un téléphone sur le même Wi-Fi,
-ouvrir `http://<ip-du-serveur>:5173/a2-budget/` (autoriser le port 5173 dans le
+ouvrir `http://<ip-du-serveur>:5173/a2budget/` (autoriser le port 5173 dans le
 firewall si besoin).
 
 ## Scripts
@@ -79,12 +79,12 @@ Le workflow `.github/workflows/ci.yml` :
 
 Prérequis côté dépôt : Pages activée avec la source **GitHub Actions**
 (Paramètres → Pages). L'application est servie sous le sous-chemin
-`/a2-budget/` (`base` de Vite + manifest + service worker alignés).
+`/a2budget/` (`base` de Vite + manifest + service worker alignés).
 
 ## Architecture
 
 ```
-a2-budget/
+a2budget/
 ├── apps/web/          PWA React + Vite (vue, styles, état, PWA)
 │   └── src/
 │       ├── state/     StorageAdapter + store React (lead)

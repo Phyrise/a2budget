@@ -6,7 +6,7 @@
  * événements du calendrier passés et à venir. validateAppState doit passer.
  */
 export async function seedShellState({ entry, module, devMode }) {
-  const core = await import(/* @vite-ignore */ `/a2-budget/@fs${entry}`);
+  const core = await import(/* @vite-ignore */ `/a2budget/@fs${entry}`);
   const now = new Date();
   const at = (d, h, m = 0) => new Date(d.getFullYear(), d.getMonth(), d.getDate(), h, m);
   const key = (d) => core.localDateKey(d);
